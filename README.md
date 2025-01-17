@@ -4,6 +4,9 @@ This is a starter project for web development with no frameworks and minimal
 dependencies. It is written in plain HTML, CSS, and JavaScript. This is a simple
 website and showcase of some fun things you can do with basic HTML, CSS, and JS.
 
+The button with the hand is the button that shows the alert of Hello world! The
+others you may just have to figure out for yourself...
+
 ## Getting Started
 
 To get started, clone this repository and run the following commands:
