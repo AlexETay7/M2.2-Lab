@@ -12,6 +12,13 @@
 
 <body>
   <h1>
+    <button class="button-no-bg" onclick="toggleSnow()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" 
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-snowflake"><path d="m10 20-1.25-2.5L6 18"/>
+      <path d="M10 4 8.75 6.5 6 6"/><path d="m14 20 1.25-2.5L18 18"/><path d="m14 4 1.25 2.5L18 6"/><path d="m17 21-3-6h-4"/>
+      <path d="m17 3-3 6 1.5 3"/><path d="M2 12h6.5L10 9"/><path d="m20 10-1.5 2 1.5 2"/><path d="M22 12h-6.5L14 15"/><path d="m4 
+      10 1.5 2L4 14"/><path d="m7 21 3-6-1.5-3"/><path d="m7 3 3 6h4"/></svg>
+    </button>
     <button class="button-no-bg" onclick="window.open('https://github.com/AlexETay7/M2.2-Lab', '_blank')">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" 
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github">
@@ -26,33 +33,54 @@
     </button>
     <button class="button-no-bg" onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" 
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><path d="M22 12h-2.48a2 2 0 
-      0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-laugh"><circle cx="12" cy="12" r="10"/>
+      <path d="M18 13a6 6 0 0 1-6 5 6 6 0 0 1-6-5h12Z"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" 
+      y2="9"/></svg>
+    </button>
+    <button class="button-no-bg" onclick="helloWorld()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/>
+      <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 
+      1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
     </button>
   </h1>
   <div class="container playfair-display-400">
     <h2>About Me</h2>
-    <ul>
+    <ul style="list-style-type: none; padding: 0; margin: 0;">
       <li><strong>Name:</strong><br>Alex Taylor</li>
       <li><strong>Expected Graduation:</strong><br>May 2026 or 2027, depending on how things go!</li>
       <li><strong>Do you currently have a job doing web dev?</strong>
         <br>Yes and no. I previously worked as a student software developer at Boise State, where I was a full-stack 
         developer for various Boise State applications, but mainly the myBoiseState and myBoiseState mobile platforms. 
         Afterward, I interned as a backend developer at MDU Resources. Currently, I’m part of the integrations team at 
-        BSU, where I do a little bit of everything, including backend APIs, frontend development, AWS solutions, and more.
+        BSU, where I do a little bit of everything, including backend development, frontend development, AWS solutions, and more!
       </li>
       <li><strong>Have you had a job or internship doing web dev?</strong><br>Yes</li>
     </ul>    
     <img src="/pfp.jpg" alt="Avatar" style="width: 20%; height: 20%">
   </div>
-  <p>
-    <button class="my-button" onclick="helloWorld()">Say Hello!</button>
-  </p>
 
   <script type="module" script="js/main.js">
     window.helloWorld = function() {
-      alert("Hello World! - Sorry for interrupting the storm...");
+      alert("Hello World!");
     };
+  </script>
+
+  <script
+    type="text/javascript"
+    src="https://unpkg.com/snowflakesjs/dist/snowflakes.bundle.min.js"
+  ></script>
+  <script>
+    let scene;
+    window.toggleSnow = function() {
+    if (scene) {
+      scene.pause();
+      scene = null; // Stop and clear the scene
+    } else {
+      scene = new SnowScene(); // Start a new scene
+      scene.play();
+    }
+    }
   </script>
 </body>
 
